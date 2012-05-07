@@ -1,0 +1,13 @@
+package chewyprime.rpg;
+
+/**
+ * Interface for anything that can act as a modifier, such as armor or
+ * abilities.  Classes implemented <code>Modifier</code> are passed to the
+ * appropriate functions instead of raw integer values or overloaded functions
+ * for each class.
+ */
+public interface Modifier
+{
+  public int getModifier();
+}
+

@@ -1,0 +1,19 @@
+package chewyprime;
+
+class GUIConstants
+{
+  public final static String FONT_PATH = "Interface/Fonts/AndikaBasic.fnt";
+  public final static String BORDER_PATH = "Interface/BorderBox.png";
+  public final static String BACKGROUND_PATH = "Interface/BackgroundBox.png";
+  public final static String VITALITY_PATH = "Interface/VitalityBox.png";
+  public final static String DAMAGE_PATH = "Interface/DamageBox.png";
+  
+  /* These are all relative to the width of the screen */
+  public final static float TEXT_SIZE = 0.0125f;
+  public final static float BOX_WIDTH = 0.15f;
+  public final static float BOX_HEIGHT = 0.025f;
+  public final static float BUTTON_WIDTH = 0.075f;
+  public final static float BUTTON_HEIGHT = 0.025f;
+  public final static float PADDING = 0.003125f;
+}
+

@@ -1,0 +1,114 @@
+package chewyprime;
+
+import chewyprime.rpg.Character;
+import chewyprime.rpg.actions.ActionResult;
+
+import java.io.IOException;
+
+import com.jme3.app.Application;
+import com.jme3.audio.AudioNode;
+import com.jme3.math.*;
+import com.jme3.scene.*;
+import com.jme3.scene.control.*;
+import com.jme3.scene.shape.*;
+import com.jme3.input.*;
+import com.jme3.input.controls.*;
+import com.jme3.font.BitmapFont;
+import com.jme3.font.BitmapText;
+import com.jme3.font.Rectangle;
+import com.jme3.material.Material;
+import com.jme3.texture.*;
+import com.jme3.renderer.*;
+import com.jme3.renderer.queue.RenderQueue;
+
+import com.jme3.system.AppSettings;
+import com.jme3.system.JmeSystem;
+
+import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.screen.*;
+
+public class HUDController extends Application implements ScreenController
+{
+  public static HUDController instance = new HUDController();
+  public static void main(String[] args) {}
+  
+  protected SceneManager mSceneManager = SceneManager.instance;
+  
+  public HUDController()
+  {
+    super();
+    start();
+    
+    /*
+    AppSettings settings = new AppSettings(true);
+    
+    if(JmeSystem.showSettingsDialog(settings, true))
+      {
+        setSettings(settings);
+        super.start();
+      }
+    */
+  }
+  
+  public void initialize() {
+      super.initialize();
+      
+      try
+        {
+          mSceneManager.setupScene();
+          mSceneManager.setupGUI();
+          mSceneManager.setupFilters();
+        }
+      catch(IOException e)
+        {
+          stop();
+          System.out.println(e);
+        }
+  }
+  
+  public void update()
+  {
+    super.update();
+    
+    float time = timer.getTimePerFrame();
+    
+    mSceneManager.update(time);
+    renderManager.render(time, true);
+  }
+  
+  public void action(String name)
+  {
+    System.out.println(name);
+  /*
+    try
+      {
+        PlayerControl playerControl = mPlayer.getControl(PlayerControl.class);
+        Character playerCharacter = playerControl.getCharacter();
+        Character enemyCharacter = mEnemy.getControl(CharacterControl.class).getCharacter();
+        
+        ActionResult result = playerControl.useAction(name, enemyCharacter);
+        
+        System.out.println(playerCharacter.getName() + " uses '" + name + "' on " + enemyCharacter.getName());
+        
+        if(result.successful())
+          System.out.println("It success: " + result.damage());
+        else
+          System.out.println("It fails: " + result.why());
+        
+        System.out.println("");
+        System.out.println(playerCharacter);
+        System.out.println(enemyCharacter);
+        System.out.println("");
+      }
+    catch(Exception e)
+      {
+        System.out.println(e.toString());
+      }
+  */
+  }
+  
+  public void bind(Nifty nifty, Screen screen) {}
+  public void onStartScreen() {}
+  public void onEndScreen() {}
+}
+

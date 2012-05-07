@@ -1,0 +1,22 @@
+package chewyprime.rpg.actions;
+
+import chewyprime.rpg;
+
+/**
+ * An RPG-related action, such as a single attack during combat.
+ */
+abstract class GameAction
+{
+  protected String mName = "";
+  
+  public GameAction(String name)
+  {
+    mName = name;
+  }
+  
+  /**
+   * @return The result of the action, specific to the subclass implementing it.
+   */
+  public abstract int act(Character user, Entity target);
+}
+

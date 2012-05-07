@@ -1,0 +1,53 @@
+package chewyprime;
+
+import com.jme3.scene.control.*
+import com.jme3.renderer.*
+import com.jme3.scene.*
+import com.jme3.math.*
+
+/* Tracks to sky to the camera without rotating it */
+class SkyControl extends AbstractControl
+{
+  protected mEnabled = true
+  
+  protected mSky = null
+  protected mCamera
+  
+  private static Vector3f mOffset = new Vector3f(0, -8, 0)
+  
+  public SkyControl(ChewyCameraNode camera)
+  {
+    mCamera = camera
+  }
+  
+  public Control cloneForSpatial(Spatial spatial)
+  {
+    return new SkyControl(spatial);
+  }
+  
+  public void controlUpdate(float time)
+  {
+    if(mSky == null) return;
+    
+    mSky.setLocalTranslation(mCamera.getLocalTranslation().add(mOffset))
+  }
+  
+  public void controlRender(RenderManager rm, ViewPort vp)
+  {
+  }
+  
+  public void setSpatial(Spatial spatial)
+  {
+    mSky = spatial
+  }
+  
+  public void setEnabled(boolean enabled)
+  {
+    mEnabled = enabled
+  }
+  
+  public boolean isEnabled()
+  {
+    return mEnabled
+  }
+}

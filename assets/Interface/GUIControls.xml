@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nifty-controls>
+  <controlDefinition name='chewyprime-hud-action'>
+    <image filename='$icon'>
+      <interact onClick='$onClick'/>
+      <effect>
+        <onHover name='pulsate' startColor='#fff3' endColor='#fff3'/>
+        <onClick name='fade' start='#8' end='#f' length='500'/>
+        <onHover name='hint' hintText='$action'/>
+      </effect>
+    </image>
+  </controlDefinition>
+  
+  <controlDefinition style='chewyprime-menu-button' name='chewyprime-menu-button'>
+    <panel style='#panel' focusable='true' childLayout='center'>
+      <text id='#text' style='#text' text='$label'/>
+      
+      <interact onClick='$onClick'/>
+      <effect>
+        <onClick name='playSound' sound='click'/>
+      </effect>
+    </panel>
+  </controlDefinition>
+</nifty-controls>

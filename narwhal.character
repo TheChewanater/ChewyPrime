@@ -1,0 +1,11 @@
+<?xml  version='1.0' encoding='UTF-8'?>
+<chewyprime.rpg.Character hitpoints='21' klass='Monster' level='0' name='Narwhal' savable_versions='0, 0' vitality='21'>
+    <str class='chewyprime.rpg.Ability' savable_versions='0' score='11'/>
+    <dex class='chewyprime.rpg.Ability' savable_versions='0' score='12'/>
+    <con class='chewyprime.rpg.Ability' savable_versions='0' score='13'/>
+    <int class='chewyprime.rpg.Ability' savable_versions='0' score='2'/>
+    <wis class='chewyprime.rpg.Ability' savable_versions='0' score='12'/>
+    <cha class='chewyprime.rpg.Ability' savable_versions='0' score='6'/>
+    <weapon class='chewyprime.rpg.Weapon' damage='1d8+8' description='Horn' savable_versions='0' type='Melee' />
+</chewyprime.rpg.Character>
+

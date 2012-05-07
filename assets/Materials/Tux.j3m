@@ -1,0 +1,16 @@
+Material Tux: MatDefs/LightBlow/LightBlow.j3md
+{
+  MaterialParameters
+  {
+    Shininess: 5.0
+    GlowIntensity: 5.0
+    
+    DiffuseMap: Textures/Characters/Tux_DiffuseMap.png
+    SpecularMap: Textures/Characters/Tux_SpecularMap.png
+    NormalMap: Textures/Characters/Tux_NormalMap.png
+    
+    Specular_Lighting: true
+    Specular: 1.0 1.0 1.0 1.0
+  }
+}
+

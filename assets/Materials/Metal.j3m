@@ -1,0 +1,17 @@
+Material Metal: MatDefs/LightBlow/LightBlow.j3md
+{
+  MaterialParameters
+  {
+    UseMaterialColors: true
+    
+    Ambient: 0 0 0 0
+    Diffuse: 1 1 1 1
+    
+    HighQuality: true
+    
+    DiffuseMap: Repeat Textures/Environment/Metal_DiffuseMap.png
+    NormalMap: Repeat Textures/Environment/Door_NormalMap.png
+    RefMap: Flip Textures/Water256.dds
+  }
+}
+

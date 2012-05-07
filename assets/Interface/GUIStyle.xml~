@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nifty-styles>
+  <style id='chewyprime-panel'>
+    <attributes visibleToMouse='true' padding='8px'
+      backgroundImage='Interface/Panel.png'
+      imageMode='resize:15,2,15,15,15,2,15,2,15,2,15,15'/>
+  </style>
+  
+  <style id='chewyprime-menu-panel' base='chewyprime-panel'>
+    <attributes childLayout='vertical' align='center' width='116px'/>
+    
+    <effect>
+      <onStartScreen name='fade' length='250' start='#00' end='#ff' inherit='true'/>
+      <onEndScreen name='fade' length='250' start='#ff' end='#00' inherit='true'/>
+    </effect>
+  </style>
+  
+  <style id='chewyprime-menu-button#panel'>
+    <attributes backgroundImage='Interface/Button.png'
+      padding='4px' width='100px' height='23px'
+      childLayout='center' visibleToMouse='true'/>
+    
+    <effect>
+      <onHover name='border' color='#aaaf' overlay='true'/>
+    </effect>
+  </style>
+  
+  <style id='chewyprime-menu-button#text' base='button-font'>
+    <attributes align='center' valign='center' textHAlign='center' textVAlign='center' visibleToMouse='false'/>
+    <effect>
+      <onEnabled name='textColorAnimated' startColor='#8886' endColor='#eeef' post='false' length='150'/>
+      <onDisabled name='textColorAnimated' startColor='#eeef' endColor='#8886' post='false' length='150'/>
+    </effect>
+  </style>
+  
+  <style id='chewyprime-health-container'>
+    <attributes backgroundColor='#f008' childLayout='center' width='100px' height='16px'/>
+  </style>
+  
+  <style id='chewyprime-health-bar'>
+    <attributes backgroundColor='#080f' childLayout='center' align='left' width='100px' height='16px'/>
+  </style>
+</nifty-styles>

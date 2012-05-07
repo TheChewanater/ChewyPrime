@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nifty-controls>
+  <controlDefinition name='chewyprime-action-button'>
+    <image filename='$icon'>
+      <interact onClick='$onClick'/>
+      
+      <effect>
+        <onHover name='pulsate' startColor='#fff3' endColor='#fff3'/>
+        <onClick name='fade' start='#8' end='#f' length='500'/>
+        <onHover name='hint' hintText='$action'/>
+      </effect>
+    </image>
+  </controlDefinition>
+</nifty-controls>

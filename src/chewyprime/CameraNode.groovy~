@@ -1,0 +1,14 @@
+package chewyprime
+
+import com.jme3.scene.control.CameraControl
+import com.jme3.scene
+import com.jme3.render.Camera
+
+class CameraNode extends scene.CameraNode
+{
+  public OrbitCameraControl(Spatial spatial, Camera camera)
+  {
+    super(spatial, camera, SpatialToCamera);
+  }
+}
+

@@ -1,0 +1,68 @@
+
+package chewyprime;
+
+import com.jme3.asset.AssetManager;
+import com.jme3.scene.control.AbstractControl;
+import com.jme3.scene.control.Control;
+import com.jme3.scene.Spatial;
+import com.jme3.scene.Node;
+import com.jme3.font.BitmapFont;
+import com.jme3.font.BitmapText;
+import com.jme3.font.Rectangle;
+import com.jme3.renderer.Camera;
+import com.jme3.renderer.RenderManager;
+import com.jme3.renderer.ViewPort;
+import com.jme3.math.*;
+
+/**
+ *  Creates a BitmapText object and tracks it to a monster's Spatial
+ */
+class MonsterTextControl extends AbstractControl
+{
+  protected final static String FONT_PATH = "Interface/Fonts/AndikaBasic.fnt";
+  
+  protected PlayerControl mPlayerControl = null;
+  protected BitmapText mText;
+  protected Camera mCamera;
+  
+  public MonsterTextControl(AssetManager assetManager, Camera cam, Node gui)
+  {
+    mText = new BitmapText(assetManager.loadFont(FONT_PATH));
+    mCamera = cam;
+    gui.attachChild(mText);
+  }
+  
+  public void controlUpdate(float time)
+  {
+    if(spatial == null) return;
+    
+    /* Get the position on the screen to display the text */
+    Vector3f textPos = mCamera.getScreenCoordinates(spatial.getLocalTranslation().add(new Vector3f(0.0f, 2.0f, 0.0f)));
+    Rectangle textBox = new Rectangle(textPos.x - 256, textPos.y + 32, 512, 0);
+    
+    mText.setBox(textBox);
+    mText.setSize(22.0f);
+    mText.setText(mPlayerControl.getCharater().toString());
+    mText.setAlignment(BitmapFont.Align.Center);
+  }
+  
+  public void controlRender(RenderManager rm, ViewPort vp)
+  {
+  }
+  
+  public void setSpatial(Spatial spatial)
+  {
+    super.setSpatial(spatial);
+    
+    mPlayerControl = spatial.getControl(PlayerControl.class);
+  }
+  
+  public Control cloneForSpatial(Spatial spatial)
+  {
+    PlayerTextControl clone = new PlayerTextControl();
+    clone.setSpatial(spatial);
+    
+    return clone;
+  }
+}
+

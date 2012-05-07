@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nifty>
+  <useStyles filename='nifty-default-styles.xml'/>
+  <useControls filename='nifty-default-controls.xml'/>
+  <useStyles filename='Interface/GUIStyle.xml'/>
+  <useControls filename='Interface/GUIControls.xml'/>
+  
+  <registerSound id='click' filename='Sounds/click.ogg'/>
+  
+  <screen id='hud' controller='chewyprime.Main'>
+    <layer id='layer' backgroundColor='#0000' childLayout='center'>
+      <panel width='100%' height='74px' valign='bottom' style='chewyprime-panel' childLayout='horizontal' visibleToMouse='true'>
+        <effect>
+          <onStartScreen name='move' mode='in' direction='bottom' length='250' inherit='true'/>
+        </effect>
+        <control name='chewyprime-hud-action'
+                 action='Unarmed Attack'
+                 onClick='action(hud,Unarmed Attack)'
+                 icon='Interface/Icons/Unarmed Attack.png'/>
+        <control name='chewyprime-hud-action'
+                 action='Melee Attack'
+                 onClick='action(hud,Melee Attack)'
+                 icon='Interface/Icons/Melee Attack.png'/>
+        <control name='chewyprime-hud-action'
+                 action='Ranged Attack'
+                 onClick='action(hud,Ranged Attack)'
+                 icon='Interface/Icons/Ranged Attack.png'/>
+      </panel>
+    </layer>
+    <layer id='layer2' backgroundColor='#0000' childLayout='horizontal'>
+      <panel id='target' valign='top' align='left' width='116px' style='chewyprime-panel' childLayout='vertical'>
+        <control id='target-health' name='label' width='100px'/>
+        <panel style='chewyprime-health-container'>
+          <panel id='target-healthbar' style='chewyprime-health-bar'/>
+        </panel>
+      </panel>
+      <panel id='player' valign='top' align='right' width='116px' style='chewyprime-panel' childLayout='vertical'>
+        <control id='player-health' name='label' width='100px'/>
+        <panel style='chewyprime-health-container'>
+          <panel id='player-healthbar' style='chewyprime-health-bar'/>
+        </panel>
+      </panel>
+    </layer>
+  </screen>
+  
+  <screen id='pause' controller='chewyprime.Main'>
+    <layer id='layer' padding='8px' backgroundColor='#0008' childLayout='center'>
+      <panel style='chewyprime-menu-panel'>
+        <control name='label' text='Paused'/>
+        <control name='chewyprime-menu-button'
+                 label='Resume'
+                 onClick='action(pause,Resume)'/>
+        <control name='chewyprime-menu-button'
+                 label='Save'
+                 onClick='action(pause,Save)'/>
+        <control name='chewyprime-menu-button'
+                 label='Load'
+                 onClick='action(pause,Load)'/>
+        <control name='chewyprime-menu-button'
+                 label='Options'
+                 onClick='action(pause,Option)'/>
+        <control name='chewyprime-menu-button'
+                 label='Quit'
+                 onClick='action(pause,Quit)'/>
+      </panel>
+    </layer>
+  </screen>
+  
+  <screen id='quit' controller='chewyprime.Main'>
+    <layer id='layer' padding='8px' backgroundColor='#0008' childLayout='center'>
+      <panel style='chewyprime-menu-panel'>
+        <control name='label' text='Really Quit?'/>
+        <control name='chewyprime-menu-button'
+                 label='Quit'
+                 onClick='action(quit,Quit)'/>
+        <control name='chewyprime-menu-button'
+                 label='Back'
+                 onClick='action(quit,Back)'/>
+      </panel>
+    </layer>
+  </screen>
+</nifty>
+
