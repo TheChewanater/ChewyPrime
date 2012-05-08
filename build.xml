@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project name="ChewyPrime" default="default" basedir=".">
-    <import file="nbproject/build-impl.xml"/>
-</project>
-
-<!--//I'm not crazy I'm just-->
